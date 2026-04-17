@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>PandaBot Info</title>
+    <link rel="stylesheet" href="css/styleC.css">
+    <script>
+        // Easter Egg: mode arc-en-ciel avec Konami Code
+        const easterEggCode = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65]; // ↑↑↓↓←→←→BA
+        let codePosition = 0;
+
+        document.addEventListener('keydown', (e) => {
+            if (e.keyCode === easterEggCode[codePosition]) {
+                codePosition++;
+                if (codePosition === easterEggCode.length) {
+                    activateEasterEgg();
+                    codePosition = 0;
+                }
+            } else {
+                codePosition = 0;
+            }
+        });
+
+        function activateEasterEgg() {
+            alert("🎉 Mode arc-en-ciel activé !");
+            document.body.classList.add('rainbow-mode');
+            document.querySelector('.main-title').classList.add('rainbow-title');
+            document.querySelectorAll('.card a').forEach(a => a.classList.add('rainbow-link'));
+        }
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const searchBox = document.getElementById("searchBox");
+            const searchIcon = document.getElementById("searchIcon");
+            const searchInput = document.getElementById("searchInput");
+            const cards = document.querySelectorAll(".card");
+
+            searchIcon.addEventListener("click", () => {
+                searchBox.classList.toggle("active");
+                searchInput.focus();
+
+                if (!searchBox.classList.contains("active")) {
+                    searchInput.value = "";
+                    filterCommands("");
+                }
+            });
+
+            searchInput.addEventListener("keyup", () => {
+                filterCommands(searchInput.value);
+            });
+
+            function filterCommands(value) {
+                const searchValue = value.toLowerCase();
+
+                cards.forEach(card => {
+                    const text = card.innerText.toLowerCase();
+
+                    if (text.includes(searchValue)) {
+                        card.style.display = "flex";
+                    } else {
+                        card.style.display = "none";
+                    }
+                });
+            }
+
+        });
+    </script>
+</head>
+
+<body>
+    <header>
+        <a href="https://discord.gg/qZe5zQuKYK" target="_blank" class="main-title-link">
+            <h1 class="main-title">PandaBot</h1>
+        </a>
+        <a href="bot3info.html" class="back-button">← Retour</a>
+        <div class="search-container">
+            <div class="search-box" id="searchBox">
+                <input type="text" id="searchInput" placeholder="Rechercher une commande...">
+                <div class="search-icon" id="searchIcon">🔍</div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="grid">
+            <div class="card">
+                <a href="bwan3.html">/bwan</a>
+            </div>
+            <div class="card">
+                <a href="depop3.html">/depop</a>
+            </div>
+            <div class="card">
+                <a href="pandastorm.html">/pandastorm</a>
+            </div>
+            <div class="card">
+                <a href="hibernation.html">/hibernation</a>
+            </div>
+            <div class="card">
+                <a href="reveille.html">/réveille</a>
+            </div>
+            <div class="card">
+                <a href="tdb3.html">/tdb</a>
+            </div>
+            <div class="card">
+                <a href="tdb_pourcentage3.html">/tdb_pourcentage</a>
+            </div>
+            <div class="card">
+                <a href="lesaviezvous3.html">/lesaviezvous</a>
+            </div>
+            <div class="card">
+                <a href="qui_est_ce3.html">/qui_est_ce</a>
+            </div>
+            <div class="card">
+                <a href="nombre3.html">/nombre</a>
+            </div>
+            <div class="card">
+                <a href="definition3.html">/definition</a>
+            </div>
+            <div class="card">
+                <a href="level3.html">/level</a>
+            </div>
+            <div class="card">
+                <a href="classement3.html">/classement</a>
+            </div>
+            <div class="card">
+                <a href="wordle3.html">/wordle</a>
+            </div>
+            <div class="card">
+                <a href="histoire3.html">/histoire</a>
+            </div>
+            <div class="card">
+                <a href="pileouface3.html">/pileouface</a>
+            </div>
+            <div class="card">
+                <a href="pendu3.html">/pendu</a>
+            </div>
+            <div class="card">
+                <a href="theme3.html">/theme</a>
+            </div>
+            <div class="card">
+                <a href="chloé3.html">/chloé</a>
+            </div>
+            <div class="card">
+                <a href="axo3.html">/axo</a>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <p>© 2026 <span>Axoboys</span> — Tous droits réservés</p>
+    </footer>
+</body>
+
+</html>

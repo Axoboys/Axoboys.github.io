@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>̷̛̍̿͗̐̎̎̑̒̿̒̅̾̈́̈́́́̈́́́̈́́̈́̚͘͝͝͝͝͝͝͝͝͝͝͝͝͝͝͝</title>
+
+<style>
+
+/* RESET */
+body {
+    margin: 0;
+    overflow: hidden;
+    background: black;
+    font-family: monospace;
+    color: #00ff00;
+}
+
+/* FOND QUI TREMBLE */
+body {
+    animation: shake 0.2s infinite alternate;
+}
+
+@keyframes shake {
+    from { transform: translate(0px, 0px) rotate(0deg); }
+    to { transform: translate(2px, -2px) rotate(0.3deg); }
+}
+
+/* TEXTE GLITCH */
+.glitch {
+    font-size: 4rem;
+    position: absolute;
+    top: 40%;
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    animation: glitch 0.3s infinite;
+}
+
+@keyframes glitch {
+    0% { text-shadow: 4px 0 red, -4px 0 blue; }
+    20% { text-shadow: -4px 0 red, 4px 0 blue; }
+    40% { text-shadow: 4px 4px red, -4px -4px blue; }
+    60% { text-shadow: -4px -4px red, 4px 4px blue; }
+    80% { text-shadow: 2px -2px red, -2px 2px blue; }
+    100% { text-shadow: -2px 2px red, 2px -2px blue; }
+}
+
+/* FLASH */
+.flash {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: white;
+    opacity: 0;
+    animation: flash 4s infinite;
+}
+
+@keyframes flash {
+    0% { opacity: 0; }
+    2% { opacity: 1; }
+    4% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+/* TEXTE QUI BOUGE PARTOUT */
+.moving {
+    position: absolute;
+    font-size: 1rem;
+    color: red;
+    animation: float 5s infinite linear;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(200px); }
+    100% { transform: translateY(0px); }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="flash"></div>
+
+<div class="glitch">
+ERROR̷͋̽̈́̈́́́́́́̈́́̈́̕͠͝͝͝͝͝͝͝͝͝͝͝͝͝͝͝͝
+</div>
+
+<script>
+
+/* Texte qui apparaît partout */
+setInterval(() => {
+
+    const span = document.createElement("div");
+    span.classList.add("moving");
+    span.innerText = "̷̐̓́̄̾̾͛͛́́́́̈́́̈́́̈́̕̚͝͝͝͝͝͝͝͝͝͝͝͝͝͝";
+
+    span.style.left = Math.random() * window.innerWidth + "px";
+    span.style.top = Math.random() * window.innerHeight + "px";
+
+    document.body.appendChild(span);
+
+    setTimeout(() => {
+        span.remove();
+    }, 3000);
+
+}, 100);
+
+
+/* Background color random */
+setInterval(() => {
+    document.body.style.background =
+        "rgb(" +
+        Math.random()*255 + "," +
+        Math.random()*255 + "," +
+        Math.random()*255 + ")";
+}, 500);
+
+
+/* Scroll automatique */
+setInterval(() => {
+    window.scrollBy(0, Math.random() * 50);
+}, 200);
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>HestnouilleBot Info</title>
+    <link rel="stylesheet" href="css/styleH.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+    <script>
+        // Easter Egg: mode arc-en-ciel avec Konami Code
+        const easterEggCode = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65]; // ↑↑↓↓←→←→BA
+        let codePosition = 0;
+
+        document.addEventListener('keydown', (e) => {
+            if (e.keyCode === easterEggCode[codePosition]) {
+                codePosition++;
+                if (codePosition === easterEggCode.length) {
+                    activateEasterEgg();
+                    codePosition = 0;
+                }
+            } else {
+                codePosition = 0;
+            }
+        });
+
+        function activateEasterEgg() {
+            alert("🎉 Mode arc-en-ciel activé !");
+            document.body.classList.add('rainbow-mode');
+            document.querySelector('.main-title').classList.add('rainbow-title');
+            document.querySelectorAll('.card a').forEach(a => a.classList.add('rainbow-link'));
+        }
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const searchBox = document.getElementById("searchBox");
+            const searchIcon = document.getElementById("searchIcon");
+            const searchInput = document.getElementById("searchInput");
+            const cards = document.querySelectorAll(".card");
+
+            searchIcon.addEventListener("click", () => {
+                searchBox.classList.toggle("active");
+                searchInput.focus();
+
+                if (!searchBox.classList.contains("active")) {
+                    searchInput.value = "";
+                    filterCommands("");
+                }
+            });
+
+            searchInput.addEventListener("keyup", () => {
+                filterCommands(searchInput.value);
+            });
+
+            function filterCommands(value) {
+                const searchValue = value.toLowerCase();
+
+                cards.forEach(card => {
+                    const text = card.innerText.toLowerCase();
+
+                    if (text.includes(searchValue)) {
+                        card.style.display = "flex";
+                    } else {
+                        card.style.display = "none";
+                    }
+                });
+            }
+
+        });
+    </script>
+</head>
+
+<body>
+    <header>
+        <a href="https://discord.gg/bhtwKwenNU" target="_blank" class="main-title-link">
+            <h1 class="main-title">HestnouilleBot</h1>
+        </a>
+        <a href="bot5info.html" class="back-button">← Retour</a>
+        <div class="search-container">
+            <div class="search-box" id="searchBox">
+                <input type="text" id="searchInput" placeholder="Rechercher une commande...">
+                <div class="search-icon" id="searchIcon">🔍</div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="grid">
+            <div class="card">
+                <a href="bwan5.html">/bwan</a>
+            </div>
+            <div class="card">
+                <a href="depop5.html">/depop</a>
+            </div>
+            <div class="card">
+                <a href="dentiste.html">/dentiste</a>
+            </div>
+            <div class="card">
+                <a href="lockvoc.html">/lockvoc</a>
+            </div>
+            <div class="card">
+                <a href="unlockvoc.html">/unlockvoc</a>
+            </div>
+            <div class="card">
+                <a href="tdb5.html">/tdb</a>
+            </div>
+            <div class="card">
+                <a href="tdb_pourcentage5.html">/tdb_pourcentage</a>
+            </div>
+            <div class="card">
+                <a href="lesaviezvous5.html">/lesaviezvous</a>
+            </div>
+            <div class="card">
+                <a href="qui_est_ce5.html">/qui_est_ce</a>
+            </div>
+            <div class="card">
+                <a href="nombre5.html">/nombre</a>
+            </div>
+            <div class="card">
+                <a href="definition5.html">/definition</a>
+            </div>
+            <div class="card">
+                <a href="level5.html">/level</a>
+            </div>
+            <div class="card">
+                <a href="classement5.html">/classement</a>
+            </div>
+            <div class="card">
+                <a href="wordle5.html">/wordle</a>
+            </div>
+            <div class="card">
+                <a href="histoire5.html">/histoire</a>
+            </div>
+            <div class="card">
+                <a href="pileouface5.html">/pileouface</a>
+            </div>
+            <div class="card">
+                <a href="pendu5.html">/pendu</a>
+            </div>
+            <div class="card">
+                <a href="theme5.html">/theme</a>
+            </div>
+            <div class="card">
+                <a href="axo5.html">/axo</a>
+            </div>
+            <div class="card">
+                <a href="chloé5.html">/chloé</a>
+            </div>
+            <div class="card">
+                <a href="moula5.html">/moula</a>
+            </div>
+            <div class="card">
+                <a href="mano5.html">/mano</a>
+            </div>
+            <div class="card">
+                <a href="hestia5.html">/hestia</a>
+            </div>
+            <div class="card">
+                <a href="acidic5.html">/acidic</a>
+            </div>
+            <div class="card">
+                <a href="greg5.html">/greg</a>
+            </div>
+            <div class="card">
+                <a href="kayou5.html">/kayou</a>
+            </div>
+            <div class="card">
+                <a href="banana5.html">/banana</a>
+            </div>
+            <div class="card">
+                <a href="mat5.html">/mat</a>
+            </div>
+            <div class="card">
+                <a href="jojo5.html">/jojo</a>
+            </div>
+            <div class="card">
+                <a href="fanarupi5.html">/fanarupi</a>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <p>© 2026 <span>Axoboys</span> — Tous droits réservés</p>
+    </footer>
+</body>
+
+</html>
