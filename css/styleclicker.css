@@ -1,0 +1,122 @@
+/* --- BODY ET STRUCTURE --- */
+body {
+  text-align: center;
+  font-family: 'Comic Sans MS', sans-serif;
+  background: linear-gradient(to bottom, #1e3c72, #2a5298);
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* --- TITRES --- */
+h1 {
+  font-size: 3em;
+  margin-top: 20px;
+  color: #ffdd57;
+  text-shadow: 2px 2px #000;
+}
+
+h2 {
+  font-size: 2em;
+  margin-top: 30px;
+  color: #00ffea;
+  text-shadow: 1px 1px #000;
+}
+
+/* --- TEXTE --- */
+p, span {
+  font-size: 1.5em;
+}
+
+#score {
+  color: #ffdd57;
+  font-weight: bold;
+}
+#cps {
+  color: #00ffea;
+}
+
+/* --- BOUTONS --- */
+button {
+  font-size: 20px;
+  padding: 15px 25px;
+  margin: 10px;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  color: rgb(0, 179, 202);
+  transition: 0.1s;
+}
+
+button:active {
+  transform: translateY(2px);
+}
+
+/* Boutons spécifiques */
+.shop button {
+  width: 250px;
+  background: #00bfff;
+  box-shadow: 0 4px #0077aa;
+}
+
+.prestige-btn {
+  width: 300px;
+  background: #ff4d4d;
+  box-shadow: 0 4px #aa0000;
+}
+
+#auth button {
+  background: #9146FF; /* violet Twitch */
+  box-shadow: 0 4px #6600cc;
+}
+
+/* --- BOUTIQUE ET LEADERBOARD --- */
+.shop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+#leaderboard {
+  margin-top: 20px;
+  background: rgba(0,0,0,0.2);
+  padding: 15px;
+  border-radius: 15px;
+}
+
+#leaderboard p {
+  font-size: 1.2em;
+  margin: 5px 0;
+  color: #ffdd57;
+  text-shadow: 1px 1px #000;
+}
+
+/* --- INPUTS (si tu veux rajouter des champs) --- */
+input {
+  padding: 10px;
+  margin: 5px;
+  border-radius: 5px;
+  border: none;
+  width: 200px;
+}
+
+/* --- EFFETS HOVER --- */
+button:hover {
+  filter: brightness(1.1);
+}
+
+.shop button:hover {
+  filter: brightness(1.2);
+}
+
+.prestige-btn:hover {
+  filter: brightness(1.2);
+}

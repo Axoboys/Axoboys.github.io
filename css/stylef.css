@@ -1,0 +1,289 @@
+/* ===== RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
+}
+
+/* ===== BODY ===== */
+body {
+    background:
+        radial-gradient(circle at top, rgba(255,140,0,0.35), transparent 60%),
+        linear-gradient(rgba(40,20,5,0.85), rgba(20,10,0,0.95)),
+        url("https://images.unsplash.com/photo-1474511320723-9a56873867b5")
+        center / cover fixed;
+    color: #fff3e6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ===== HEADER ===== */
+header {
+    background: rgba(60, 25, 5, 0.95);
+    border-bottom: 3px solid #ff8c00;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+/* Titre */
+.main-title-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.main-title {
+    font-size: 3rem;
+    letter-spacing: 3px;
+    color: #ffe8cc;
+    text-shadow:
+        0 0 10px rgba(255,140,0,0.9),
+        0 0 25px rgba(255,94,0,0.7),
+        0 0 45px rgba(255,200,150,0.5);
+}
+
+/* Bouton retour */
+.back-button {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    text-decoration: none;
+    color: #fff3e6;
+    font-size: 1rem;
+    padding: 8px 14px;
+    border: 2px solid #ff8c00;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.back-button:hover {
+    background: #ff8c00;
+    color: #3b1600;
+    box-shadow: 0 0 20px #ff8c00;
+}
+
+/* ===== MAIN ===== */
+main {
+    flex: 1;
+    padding: 50px 20px;
+}
+
+/* ===== GRID ===== */
+.grid {
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin: auto;
+    margin-top: 30px;
+}
+
+/* ===== CARD ===== */
+.card {
+    background: linear-gradient(145deg, #5a2d0c, #3b1d05);
+    border: 2px solid #ff8c00;
+    border-radius: 18px;
+    text-align: center;
+    padding: 28px 4px;
+    box-shadow:
+        inset 0 0 20px rgba(255,140,0,0.2),
+        0 10px 30px rgba(0, 0, 0, 0.8);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 🔥 Effet renard lumineux */
+.card:hover {
+    transform: translateY(-6px) scale(1.05);
+    box-shadow:
+        0 0 15px #ff8c00,
+        0 0 35px rgba(255,120,0,0.9),
+        inset 0 0 30px rgba(255,220,180,0.25);
+}
+
+/* Liens = boutons renard */
+.card a {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #ffe8cc;
+    letter-spacing: 1px;
+    padding: 10px 16px;
+    border: 2px solid #ff8c00;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.card a:hover {
+    background: linear-gradient(135deg, #ff8c00, #ffb347);
+    color: #3b1600;
+    box-shadow:
+        0 0 10px #ff8c00,
+        0 0 25px #ff5e00,
+        0 0 45px rgba(255,255,255,0.8);
+    text-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+
+/* ===== ABOUT ===== */
+.about-text {
+    background: linear-gradient(145deg, #5a2d0c, #3b1d05);
+    border: 2px solid #ff8c00;
+    border-radius: 18px;
+    text-align: center;
+    padding: 28px 15px;
+    box-shadow:
+        inset 0 0 20px rgba(255,140,0,0.2),
+        0 10px 30px rgba(0, 0, 0, 0.8);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: #ffb347;
+    margin: 200px;
+}
+
+.about-text a {
+    color: #ffb347;
+}
+
+/* ===== INFO ===== */
+.info {
+    background: linear-gradient(145deg, #fff3e0, #ffd8a8);
+    border: 2px solid #cc7000;
+    border-radius: 16px;
+    padding: 30px 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: #5a2d0c;
+    margin: 200px;
+    text-align: center;
+}
+
+.info a {
+    color: #cc7000;
+}
+
+/* Images */
+img {
+    width: 20px;
+    border-radius: 16px;
+}
+
+#fanarupi {
+    width: 100px;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+    background: rgba(50, 20, 5, 0.98);
+    border-top: 3px solid #ff8c00;
+    text-align: center;
+    padding: 15px;
+    font-size: 0.9rem;
+}
+
+.footer span {
+    color: #ffb347;
+    font-weight: bold;
+}
+
+/* Overlay arc-en-ciel semi-transparent */
+.rainbow-mode::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 999;
+    background: linear-gradient(270deg, red, orange, yellow, green, blue, indigo, violet);
+    background-size: 1400% 1400%;
+    opacity: 0.3;
+    animation: rainbow-bg 10s linear infinite;
+}
+
+@keyframes rainbow-bg {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Titre arc-en-ciel */
+@keyframes rainbow-text {
+    0%, 100% { color: red; }
+    14% { color: orange; }
+    28% { color: yellow; }
+    42% { color: green; }
+    57% { color: blue; }
+    71% { color: indigo; }
+    85% { color: violet; }
+}
+
+.rainbow-title {
+    animation: rainbow-text 2s linear infinite;
+}
+
+/* Liens dans les cards arc-en-ciel */
+.rainbow-link {
+    animation: rainbow-text 2s linear infinite;
+}
+
+/* ========================= */
+/*    BARRE DE RECHERCHE     */
+/* ========================= */
+
+.search-container {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.search-box {
+    position: relative;
+    width: 45px;
+    height: 45px;
+}
+
+.search-box input {
+    position: absolute;
+    right: 0;
+    width: 260px;
+    height: 45px;
+    border-radius: 20px;
+    border: 2px solid #ff8c00;
+    outline: none;
+    padding: 0 15px;
+    font-size: 14px;
+    opacity: 0;
+    background: rgba(255,255,255,0.95);
+    color: #ff8c00;
+    transition: opacity 0.3s ease;
+    box-shadow: 0 0 15px rgba(255, 123, 0, 0.74);
+}
+
+.search-box.active input {
+    opacity: 1;
+}
+
+.search-icon {
+    position: relative;
+    width: 45px;
+    height: 45px;
+    border: 1px solid #ff8c00;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #ff8c00;
+    transition: all 0.3s ease;
+}
+
+.search-icon:hover {
+    background: #522100;
+    color: white;
+    box-shadow:
+        0 0 15px rgba(255, 102, 0, 0.671),
+        0 0 25px rgba(80,200,220,0.6);
+}

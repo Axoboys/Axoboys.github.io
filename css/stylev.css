@@ -1,0 +1,118 @@
+/* ===== RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+/* ===== BODY ===== */
+body {
+    background: #2c2f33;
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ===== HEADER ===== */
+header {
+    background: #23272a;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border-bottom: 2px solid #7289da;
+}
+
+header h1 {
+    font-size: 2rem;
+    flex: 1;
+}
+
+.back-button {
+    text-decoration: none;
+    color: #fff;
+    padding: 6px 14px;
+    border-radius: 12px;
+    border: 1px solid #7289da;
+    transition: all 0.3s ease;
+}
+
+.back-button:hover {
+    background: #7289da;
+    color: #fff;
+}
+
+/* ===== FILTRES ===== */
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.filter-btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 20px;
+    background: #7289da;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: #99a9f0;
+}
+
+/* ===== GRID ===== */
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 0 20px 50px;
+}
+
+/* ===== CARD ===== */
+.card {
+    background: #23272a;
+    border: 2px solid #7289da;
+    border-radius: 16px;
+    padding: 10px;
+    width: 300px;
+    transition: all 0.3s ease;
+}
+
+.card iframe {
+    width: 100%;
+    height: 170px;
+    border-radius: 12px;
+}
+
+.card p {
+    margin-top: 10px;
+    font-size: 0.95rem;
+    text-align: center;
+}
+
+/* Hover effect */
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #7289da80;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background: #23272a;
+    text-align: center;
+    padding: 15px;
+    border-top: 2px solid #7289da;
+}
+
+footer span {
+    color: #7289da;
+    font-weight: bold;
+}

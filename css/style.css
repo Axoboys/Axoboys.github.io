@@ -1,0 +1,445 @@
+/* ===== BODY & FOND ANIMÉ ===== */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(120deg, #020617, #0f172a, #020617, #1e293b);
+  background-size: 300% 300%;
+  animation: gradientMove 12s ease infinite;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* ===== HEADER & BACK BUTTON ===== */
+header {
+  padding: 20px;
+}
+
+.back-button {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  padding: 10px 16px;
+  font-weight: 600;
+  color: #38bdf8;
+  background: rgba(30, 41, 59, 0.7);
+  backdrop-filter: blur(8px);
+  border-radius: 999px;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  transition: 0.25s all;
+  z-index: 1000;
+  text-decoration: none;
+}
+
+.back-button:hover {
+  transform: translateX(-4px) scale(1.05);
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.35);
+  background: rgba(56, 189, 248, 0.15);
+}
+
+/* ===== RECHERCHE ===== */
+.search-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.search-box {
+  position: relative;
+  width: 45px;
+  height: 45px;
+  transition: 0.4s ease;
+}
+
+.search-box input {
+  position: absolute;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 999px;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  outline: none;
+  padding: 0 20px;
+  font-size: 14px;
+  opacity: 0;
+  background: rgba(30, 41, 59, 0.7);
+  color: #38bdf8;
+  transition: 0.4s ease;
+}
+
+.search-box.active {
+  width: 260px;
+}
+
+.search-box.active input {
+  opacity: 1;
+}
+
+.search-icon {
+  position: absolute;
+  right: 0;
+  width: 45px;
+  height: 45px;
+  background: rgba(30, 41, 59, 0.7);
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #38bdf8;
+  font-size: 18px;
+  transition: 0.25s all;
+}
+
+.search-icon:hover {
+  transform: translateX(4px) scale(1.05);
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.35);
+}
+
+/* Effet vague acide */
+.acid-wave {
+  animation: acidWave 1s ease-in-out;
+}
+
+@keyframes acidWave {
+  0% {
+    filter: hue-rotate(0deg) blur(0px);
+    transform: scale(1);
+  }
+
+  25% {
+    filter: hue-rotate(90deg) blur(2px);
+    transform: scale(1.02);
+  }
+
+  50% {
+    filter: hue-rotate(180deg) blur(4px);
+    transform: scale(1.05);
+  }
+
+  75% {
+    filter: hue-rotate(270deg) blur(2px);
+    transform: scale(1.02);
+  }
+
+  100% {
+    filter: hue-rotate(360deg) blur(0px);
+    transform: scale(1);
+  }
+}
+
+/* Explosion nucléaire */
+.nuke {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, yellow, orange, red, transparent);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  animation: explode 1s ease-out forwards;
+  pointer-events: none;
+}
+
+@keyframes explode {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 1;
+  }
+
+  70% {
+    transform: translate(-50%, -50%) scale(4);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(6);
+    opacity: 0;
+  }
+}
+
+/* Apparition spéciale du bot */
+.acibot-highlight {
+  animation: botAppear 1s ease-out;
+  box-shadow: 0 0 40px lime, 0 0 80px #00ff88;
+  transform: scale(1.2);
+}
+
+@keyframes botAppear {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
+
+/* ===== TITRE PRINCIPAL ===== */
+.main-title {
+  font-size: 3rem;
+  margin-top: 80px;
+  text-align: center;
+  font-weight: 900;
+  background: linear-gradient(90deg, #38bdf8, #0ea5e9, #7dd3fc);
+  color: transparent;
+  text-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
+  animation: titleGradient 4s ease infinite, titleAppear 0.8s ease forwards;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+/* ===== GRID DE CARTES ===== */
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 50px;
+  padding-bottom: 50px;
+}
+
+.card {
+  background: rgba(30, 41, 59, 0.7);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  border-radius: 14px;
+  width: 220px;
+  padding: 20px;
+  text-align: center;
+  transition: 0.3s all;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 0 25px #38bdf8, 0 0 35px #0ea5e9;
+}
+
+.card img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.card:hover img {
+  transform: scale(1.1);
+}
+
+.card a {
+  display: block;
+  margin-top: 12px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+  transition: 0.3s all;
+}
+
+.card a:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px #38bdf8, 0 0 25px #0ea5e9;
+  background: linear-gradient(135deg, #0ea5e9, #38bdf8);
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  text-align: center;
+  margin-top: 80px;
+  padding: 20px;
+  color: #94a3b8;
+}
+
+.footer span {
+  color: #38bdf8;
+  font-weight: bold;
+  text-shadow: 0 0 12px rgba(56, 189, 248, 0.4);
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes titleGradient {
+  0% {
+    background-position: 0%;
+  }
+
+  100% {
+    background-position: 200%;
+  }
+}
+
+@keyframes titleAppear {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== SECRET CARD ===== */
+.secret-card {
+  box-shadow: 0 0 25px #ff00ff;
+  border: 1px solid #ff00ff;
+  animation: glitchAppear 0.6s ease forwards;
+}
+
+@keyframes glitchAppear {
+  0% {
+    transform: scale(0.5) rotate(-10deg);
+    opacity: 0;
+    filter: blur(8px);
+  }
+
+  50% {
+    transform: scale(1.1) rotate(5deg);
+    filter: blur(2px);
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+/* ===================== */
+/* VAGUE ACIDE */
+/* ===================== */
+
+.acid-wave {
+  animation: acidWave 2s ease-in-out;
+}
+
+@keyframes acidWave {
+
+  0% {
+    filter: hue-rotate(0deg) saturate(1);
+    transform: scale(1);
+  }
+
+  30% {
+    filter: hue-rotate(120deg) saturate(3) blur(2px);
+    transform: scale(1.03) skewX(2deg);
+  }
+
+  60% {
+    filter: hue-rotate(240deg) saturate(4) blur(4px);
+    transform: scale(1.05) skewX(-2deg);
+  }
+
+  100% {
+    filter: hue-rotate(360deg) saturate(1);
+    transform: scale(1);
+  }
+
+}
+
+
+
+/* ===================== */
+/* EXPLOSION NUCLEAIRE */
+/* ===================== */
+
+.nuke {
+
+  position: fixed;
+  top: 50%;
+  left: 50%;
+
+  width: 250px;
+  height: 250px;
+
+  background: radial-gradient(circle, #ffff66, orange, red, transparent);
+
+  border-radius: 50%;
+
+  transform: translate(-50%, -50%) scale(0);
+
+  animation: explode 1s ease-out forwards;
+
+  pointer-events: none;
+
+  z-index: 9999;
+
+}
+
+@keyframes explode {
+
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 1;
+  }
+
+  60% {
+    transform: translate(-50%, -50%) scale(4);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(6);
+    opacity: 0;
+  }
+
+}
+
+
+
+/* ===================== */
+/* APPARITION ACIBOT */
+/* ===================== */
+
+.acibot-highlight {
+
+  animation: acibotSpawn 1.2s ease;
+
+  box-shadow:
+    0 0 30px #00ff88,
+    0 0 60px #00ff88,
+    0 0 120px #00ff88;
+
+  transform: scale(1.2);
+
+  border: 2px solid #00ff88;
+
+}
+
+@keyframes acibotSpawn {
+
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  70% {
+    transform: scale(1.3);
+  }
+
+  100% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+
+}
